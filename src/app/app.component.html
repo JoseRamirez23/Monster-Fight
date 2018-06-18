@@ -1,8 +1,10 @@
-<p>Monster Name :{{mosterSelected.monsterName}}</p>
-    <button type="button"[disabled]="!monsterName" (click)="generatePower()">Power</button>
-    <p *ngIf="monsterSelected.monsterPower">{{monsterSelected.monsterName}} has the Power of {{monsterSelected.monsterPower}}</p>
-    <hr>
-    <p>All monster:</p>
-    <ul>
-        <li *ngFor="let monster of monsters">{{monster.monsterName}} has {{monster.monsterPower}}</li>
-    </ul>
+
+<main>
+<hero (heroPower)="whatsHeroPower($event)"></hero>
+<monster [heroPower]="heroPower"></monster>
+</main>
+    
+
+
+   
+    

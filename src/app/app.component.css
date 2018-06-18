@@ -1,0 +1,28 @@
+
+main{
+    border:5px solid red;
+    height: 600px;
+    width:90vw;
+    margin:auto;
+    border-radius: 10px;
+    background-color: rgb(185, 181, 181);
+    padding:10px;
+}
+h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    color:white;
+}
+button{
+    border-radius:1px 5px 5px 1px;
+}
+input{
+    border-radius:5px 1px 1px 5px;
+}
+
+.danger{
+    color:red;
+}
+
+.safe{
+    color:rgb(251, 255, 27);
+}

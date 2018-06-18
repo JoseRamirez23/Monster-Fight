@@ -1,0 +1,30 @@
+
+
+<h1 [ngClass]="{'danger':heroPower < 100}">Rival Monsters</h1>
+
+<p *ngIf="monsterSelected.monsterPower">Monster Name :{{monsterSelected.monsterName}}</p>
+<p *ngIf="monsterSelected.monsterPower">{{monsterSelected.monsterName}} has a power level of {{monsterSelected.monsterPower}}</p>
+<div>
+    <p *ngIf="!monsterSelected.monsterPower">Please press button to find monster information</p>
+    <button type="button"[disabled]="monsterSelected.monsterPower > 50" (click)="generatePower()">Info</button>
+</div>   
+    
+    <p>All monster:</p>
+    <ul>
+
+        <li *ngFor="let monster of monsters">{{monster.monsterName}} has {{monster.monsterPower}}</li>
+
+    </ul>
+
+    <p *ngFor="let monster of monsters" 
+    [ngStyle]="{'color': heroPower ? monster.monsterPower >= heroPower ? 'red':'' : ''}">
+    {{monster.monsterName}} power is: {{monster.monsterPower}} and your hero's power is:{{heroPower}}
+    <button type="button" [disabled]="!monsterSelected.monsterPower || !heroPower " (click)="remainingPower()">Fight!</button>
+    </p>
+
+    <p *ngIf="left > 0">Your Hero's remaining power {{left}}</p>
+    <p *ngIf="left < 0">You Die</p>
+        
+    
+
+    
