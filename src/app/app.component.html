@@ -1,7 +1,7 @@
 
 <main>
-<hero (heroPower)="whatsHeroPower($event)"></hero>
-<monster [heroPower]="heroPower"></monster>
+<hero (heroPower)="whatsHeroPower($event)" [leftHero]= 'savedLeftNum'></hero>
+<monster [heroPower]="heroPower" (left)= 'leftNum($event)'></monster>
 </main>
     
 

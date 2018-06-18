@@ -22,8 +22,11 @@
     <button type="button" [disabled]="!monsterSelected.monsterPower || !heroPower " (click)="remainingPower()">Fight!</button>
     </p>
 
-    <p *ngIf="left > 0">Your Hero's remaining power {{left}}</p>
-    <p *ngIf="left < 0">You Die</p>
+    <p *ngIf="life > 0">Your Hero's remaining power {{life}}</p>
+
+    <p *ngIf="life < 0 ">You Die</p>
+
+    
         
     
 

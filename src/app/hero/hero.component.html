@@ -1,6 +1,6 @@
 <h1 [ngClass]="{'safe':hero.power > 500}">Your Hero</h1>
 <input type="text" [(ngModel)]="hero.name" >
-<button type="button" [disabled]="!hero.name" (click)="generateheroPower()" *ngIf="!hero.power" >Choose your Hero</button>
+<button type="button" [disabled]="!hero.name" (click)="generateheroPower()" *ngIf="!hero.power || leftHero < 0" >Choose your Hero</button>
 <br>
 <p>Your hero has a power level of: {{ hero.power }}</p>
 <hr>

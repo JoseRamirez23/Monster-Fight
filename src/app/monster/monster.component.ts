@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 
 @Component({
@@ -13,7 +13,10 @@ export class MonsterComponent implements OnInit{
 @Input()heroPower:number;
 
 //this is for the second part of monster-fight projec
-left : number;
+@Output()left = new EventEmitter<number>();
+
+life:number;
+lifeTwo:number;
  
 monsters:any[]=[
     {
@@ -46,8 +49,12 @@ monsters:any[]=[
    }
 
    remainingPower(){
-      this.left = this.heroPower - this.monsterSelected.monsterPower ;
-     console.log(this.left);
+      this.left.emit(this.heroPower - this.monsterSelected.monsterPower  );
+      this.life = this.heroPower - this.monsterSelected.monsterPower;
+
+      this.lifeTwo = this.life - this.monsterSelected.monsterPower;
+
+     console.log(this.life);
    }
   
 

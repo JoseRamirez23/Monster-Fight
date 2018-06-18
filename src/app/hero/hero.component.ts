@@ -1,7 +1,4 @@
-import { Component, OnInit,Output,EventEmitter } from "@angular/core";
-
-
-
+import { Component, OnInit,Output,EventEmitter,Input } from "@angular/core";
 
 @Component({
     selector:'hero',
@@ -23,12 +20,13 @@ hero:any={
   
 
   @Output() heroPower = new EventEmitter<number>();
-
+  @Input() leftHero:number;
 generateheroPower(){
 
     this.hero.power = Math.floor(Math.random()*550);
 
     this.heroPower.emit(this.hero.power);
+
   }
 
 }

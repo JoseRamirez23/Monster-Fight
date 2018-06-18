@@ -11,6 +11,7 @@ export class AppComponent implements OnInit{
   //we use this on monster
   // monsterName:string = 'kaiju';
   // monsterPower: number;
+  savedLeftNum: number;
 
  heroPower:number;
 
@@ -23,7 +24,10 @@ export class AppComponent implements OnInit{
 
   }
 
-
+  leftNum(leftNum) {
+    this.savedLeftNum = leftNum;
+    console.log(this.savedLeftNum);
+  }
   
   
 }
